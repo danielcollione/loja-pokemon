@@ -1,26 +1,24 @@
 import React, {useState, useEffect} from 'react'
-import ListPokemon from './listPokemon';
-import axios from 'axios';
+import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faSearch, 
+} from '@fortawesome/free-solid-svg-icons';
 
 function MenuPokemon() {
 
-
-  
-  // const [pokemon, setPokemon] = useState([])
-
-  // useEffect(() => {
-  //   axios.get("https://pokeapi.co/api/v2/pokemon")
-  //   .then(res => {
-  //     setPokemon(res.data.results.map(p => p.name))
-  //   })
-  // }, [])
-
-
-
-
   return (
-    // <ListPokemon pokemon={pokemon}/>
-    <h1>Menu</h1>
+    <Navbar bg="dark" variant="dark">
+    <Navbar.Brand href="#home">Loja Pokemon</Navbar.Brand>
+    <Nav className="mr-auto">
+      <Nav.Link href="#home" disabled>Encontre seu Pokemon tipo Dragão favorito.</Nav.Link>
+    </Nav>
+    <Form inline>
+    
+      <FormControl type="text" placeholder="Procurar Pokemon" className="mr-sm-2" />
+      <Button variant="outline-light">GO! <FontAwesomeIcon icon={faSearch} /></Button>
+    </Form>
+  </Navbar>
   );
 }
 

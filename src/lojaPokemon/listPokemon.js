@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Bulbasar from "../imagens/1.png";
+import Dragon from "../imagens/1.png";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import PropTypes from 'prop-types';
 
-export default function ListPokemon() {
+export default function ListPokemon(props) {
   const [pokemon, setPokemon] = useState([]);
+  const [preco, setPreco] = useState('5,00')
 
   useEffect(() => {
     axios.get("https://pokeapi.co/api/v2/type/16").then((res) => {
@@ -13,19 +15,27 @@ export default function ListPokemon() {
     });
   }, []);
 
+  function handleComprar(event, pokemon){
+    event.preventDefault();
+
+    props.adicionarPokemon(pokemon);
+    props.exibirMensagem(pokemon);
+
+  }
+
   function render() {
-    let key = 1;
+    
     const cards = pokemon.map(pokemon => 
       <Card 
-        key={key}
+        
         style={{ width: "18rem", margin: "10px", float: "left" }}>
-        <Card.Img variant="top" src={Bulbasar} />
+        <Card.Img variant="top" src={Dragon} />
         <Card.Body className="text-center">
           <Card.Title style={{ height: "40" }}>
             {pokemon}
           </Card.Title>
-          <Card.Text>{'R$ 5,00'}</Card.Text>
-          <Button variant="success" style={{ width: "100%" }}>
+          <Card.Text>R$ {preco}</Card.Text>
+          <Button variant="success" style={{ width: "100%" }} onClick={(event) => handleComprar(event, pokemon)}>
             Adicionar
           </Button>
         </Card.Body>
@@ -41,4 +51,9 @@ export default function ListPokemon() {
   //     <div key={p}>{p}</div>
   //   ))}
   // </div>
+}
+
+ListPokemon.propTypes = {
+  adicionarPokemon: PropTypes.func.isRequired,
+  exibirMensagem: PropTypes.func.isRequired,
 }
