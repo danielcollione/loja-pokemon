@@ -8,10 +8,10 @@ import {
 function MenuPokemon() {
 
   return (
-    <Navbar fixed="top" bg="danger" variant="dark">
+    <Navbar fixed="top" bg="primary" variant="dark">
     <Navbar.Brand href="/">Loja Pokemon</Navbar.Brand>
     <Nav className="">
-      <Nav.Link disabled>Encontre seu Pokemon tipo Fogo favorito.</Nav.Link>
+      <Nav.Link style={{color: '#C0C0C0'}} disabled>Encontre seu Pokemon tipo Água favorito.</Nav.Link>
     </Nav>
   </Navbar>
   );

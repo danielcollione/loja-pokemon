@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import LojaPokemon from './lojapokemon';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Routes from './routes';
+
 
 ReactDOM.render(
-  
-    <LojaPokemon />
+    
+    <Routes />
   ,
   document.getElementById('root')
 );

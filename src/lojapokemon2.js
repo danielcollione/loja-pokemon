@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import MenuPokemon from "./lojaPokemon/menuPokemon";
-import ListPokemon from "./lojaPokemon/listPokemon";
-import carrinho from "./lojaPokemon/carrinho";
-import Pokemons from "./lojaPokemon/pokemons";
+import MenuPokemon from "./lojaPokemon2/menuPokemon";
+import ListPokemon from "./lojaPokemon2/listPokemon";
+import carrinho from "./lojaPokemon2/carrinho";
+import Pokemons from "./lojaPokemon2/pokemons";
 import { Container, Row, Col } from "react-bootstrap";
-import Carrinho from "./lojaPokemon/carrinho";
+import Carrinho from "./lojaPokemon2/carrinho";
 
 function LojaPokemon() {
   const [carrinho, setCarrinho] = useState({ pokemons: [] });

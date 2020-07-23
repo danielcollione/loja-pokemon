@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { NavDropdown, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSadTear } from '@fortawesome/free-solid-svg-icons';
-import triste from '../imagens/7.gif';
+import triste from '../imagens/2.png';
 import poke from '../imagens/3.png';
 
 export default function ItensCarrinho(props) {
@@ -14,10 +14,10 @@ export default function ItensCarrinho(props) {
         <NavDropdown.Item disabled>
           
           
-          <Image rounded style={{marginTop: 50}} src={triste}/>
+          <Image roundedCircle src={triste}/>
           
           <br/>  
-          <p>Carrinho vazio...</p>       
+          Carrinho Vazio...        
         </NavDropdown.Item>
       );
     }

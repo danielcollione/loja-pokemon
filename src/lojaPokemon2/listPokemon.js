@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Dragon from "../imagens/1.png";
+import Water from "../imagens/5.png";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import PropTypes from 'prop-types';
@@ -10,7 +10,7 @@ export default function ListPokemon(props) {
   const [preco, setPreco] = useState('5,00')
 
   useEffect(() => {
-    axios.get("https://pokeapi.co/api/v2/type/10").then((res) => {
+    axios.get("https://pokeapi.co/api/v2/type/11").then((res) => {
       setPokemon(res.data.pokemon.map((p) => p.pokemon.name));
     });
   }, []);
@@ -29,13 +29,13 @@ export default function ListPokemon(props) {
       <Card 
         
         style={{ width: "14rem", margin: "10px", float: "left" }}>
-        <Card.Img variant="top" src={Dragon} />
+        <Card.Img variant="top" src={Water} />
         <Card.Body className="text-center">
           <Card.Title style={{ height: "40" }}>
             {pokemon}
           </Card.Title>
           <Card.Text>R$ {preco}</Card.Text>
-          <Button variant="danger" style={{ width: "100%" }} onClick={(event) => handleComprar(event, pokemon)}>
+          <Button variant="warning" style={{ width: "100%" }} onClick={(event) => handleComprar(event, pokemon)}>
             Adicionar
           </Button>
         </Card.Body>
