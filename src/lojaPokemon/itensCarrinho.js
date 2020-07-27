@@ -7,7 +7,13 @@ import triste from '../imagens/7.gif';
 import poke from '../imagens/3.png';
 
 export default function ItensCarrinho(props) {
+
+  
+
   function render() {
+
+    
+
     // carrinho vazio
     if (props.pokemons.length === 0) {
       return (
@@ -27,6 +33,7 @@ export default function ItensCarrinho(props) {
         <Image src={poke}/> {pokemons.pokemon} - {pokemons.quantidade} x R${pokemons.preco}
       </NavDropdown.Item>
     );
+    
     return itens;
   }
 

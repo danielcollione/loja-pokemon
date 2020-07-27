@@ -16,6 +16,10 @@ export default function Pokemons(props) {
 
   const [exibirMsg, setExibirMsg] = useState(false);
   const [pokemon, setPokemon] = useState("");
+  const [filtroPokemon, setFiltroPokemon] = useState('');
+
+ 
+
 
 
   function visivel() {
@@ -30,6 +34,10 @@ export default function Pokemons(props) {
     }, 3000);
   }
 
+  function searchPokemon(PokemonToSearch){
+
+  }
+
   return (
     <div className={visivel()}>
       <Alert variant="success" style={{ margin: "10px"}} show={exibirMsg}>
@@ -37,7 +45,11 @@ export default function Pokemons(props) {
       </Alert>
       <Navbar>
         <Form inline>
-          <FormControl type="text" placeholder="Procurar Pokemon" />
+          <FormControl 
+          type="text"
+          placeholder="Procurar Pokemon" 
+          onChangeText={text => {searchPokemon(text)}}
+          />
           <Button variant="danger">GO!</Button>
         </Form>
       </Navbar>
